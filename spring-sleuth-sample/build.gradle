@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'eclipse'
+apply plugin: 'com.github.ben-manes.versions'
+
+buildscript {
+  repositories {
+	mavenCentral()
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
+    classpath('org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE')
+  }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-starter-sleuth:1.2.1.RELEASE'
+    compile 'org.apache.httpcomponents:httpcomponents-client:4.5.3'
+}
+
+version = '1.0'
+group = 'svenz'
+
+compileJava.sourceCompatibility = 1.8
+compileJava.targetCompatibility = 1.8
+
+compileTestJava.sourceCompatibility = 1.8
+compileTestJava.targetCompatibility = 1.8
+
+springBoot {
+
+}
